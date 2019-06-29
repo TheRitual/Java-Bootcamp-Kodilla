@@ -1,1 +1,2 @@
-# marcin-kawczynski-kodilla-java
+# Marcin Kawczynski
+##Kodilla - Java

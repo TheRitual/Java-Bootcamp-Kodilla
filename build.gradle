@@ -21,6 +21,8 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         exclude group: 'junit', module: 'junit'
     }
+    //external
+    testCompile ('junit:junit:4.12')
 }
 
 test {

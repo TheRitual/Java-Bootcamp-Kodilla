@@ -1,13 +1,13 @@
 package com.kodilla.testing.user;
-
+import com.kodilla.testing.ColorizeText;
 import org.junit.*;
 
 public class TestingUser {
-
+    private ColorizeText ctxt = new ColorizeText(true);
 
     @Before
     public void before() {
-        System.out.println("\tTest CASE begin:");
+        System.out.println(ctxt.cyan("Test CASE begin:"));
     }
 
     @BeforeClass
@@ -17,7 +17,7 @@ public class TestingUser {
 
     @After
     public void after() {
-        System.out.println("\t:Test CASE end");
+        System.out.println(ctxt.cyan(":Test CASE end"));
     }
 
     @AfterClass
@@ -27,7 +27,7 @@ public class TestingUser {
 
     @Test
     public void testCaseUserName() {
-        System.out.println("Testing Case User Name");
+        System.out.println(ctxt.purple("Testing Case User Name"));
         //Given
         SimpleUser simpleUser = new SimpleUser("Spider-Man","Peter Parker");
         //When
@@ -38,7 +38,7 @@ public class TestingUser {
 
     @Test
     public void testCaseRealName() {
-        System.out.println("Testing Case Real Name");
+        System.out.println(ctxt.purple("Testing Case Real Name"));
         //Given
         SimpleUser simpleUser = new SimpleUser("Spider-Man","Peter Parker");
         //When

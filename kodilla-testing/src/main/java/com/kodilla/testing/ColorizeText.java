@@ -1,4 +1,4 @@
-package com.kodilla;
+package com.kodilla.testing;
 
 public class ColorizeText {
     private static final String RESET = "\u001B[0m";
@@ -16,7 +16,7 @@ public class ColorizeText {
         isColorized = colorized;
     }
 
-    ColorizeText(boolean colorize){
+    public ColorizeText(boolean colorize){
         this.isColorized = colorize;
     }
 

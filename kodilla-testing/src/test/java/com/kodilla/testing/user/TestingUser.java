@@ -4,6 +4,7 @@ import org.junit.*;
 
 public class TestingUser {
 
+
     @Before
     public void before() {
         System.out.println("\tTest CASE begin:");

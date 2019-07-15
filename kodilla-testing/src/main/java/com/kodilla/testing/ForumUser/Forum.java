@@ -83,7 +83,7 @@ public class Forum {
         //removes post with uuid postUuid
     }
 
-    public void removeComment(int comment   Number) {
+    public void removeComment(int commentNumber) {
         //remove post number postNumber
     }
 

@@ -26,7 +26,7 @@ public class CollectionTestSuite {
     public void testEmptyArray() {
         System.out.println(ct.purple("Testing Empty Array"));
         ArrayList empty = new ArrayList();
-        ArrayList result = OddNumbersExterminator.exterminate(empty);
+        ArrayList result = (ArrayList) OddNumbersExterminator.exterminate(empty);
         Assert.assertTrue(result.isEmpty());
     }
 
@@ -38,7 +38,7 @@ public class CollectionTestSuite {
         for(int i = 0; i < 100 ; i++) {
             generated.add(gen.nextInt(999));
         }
-        ArrayList result = OddNumbersExterminator.exterminate(generated);
+        ArrayList result = (ArrayList) OddNumbersExterminator.exterminate(generated);
         result.forEach(System.out::println);
     }
 

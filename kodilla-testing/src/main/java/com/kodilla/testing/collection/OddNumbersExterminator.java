@@ -8,6 +8,5 @@ public class OddNumbersExterminator {
         return list.stream()
                 .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
-
     }
 }

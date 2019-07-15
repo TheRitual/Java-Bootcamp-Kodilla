@@ -10,7 +10,7 @@ public class ForumPost {
     private long timeStamp;
     private String uuid;
 
-    public ForumPost (String userUuid, String postUuid, String body) {
+    public ForumPost (String userUuid, String body) {
         this.timeStamp = new Timestamp(System.currentTimeMillis()).getTime();
         this.authorUuid = userUuid;
         this.body = body;

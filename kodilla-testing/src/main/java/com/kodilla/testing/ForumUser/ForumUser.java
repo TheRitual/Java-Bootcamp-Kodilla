@@ -14,6 +14,18 @@ public class ForumUser {
         this.uuid = UUID.randomUUID().toString();
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -2,6 +2,7 @@ package com.kodilla.testing.ForumUser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Forum {
     private List<ForumUser> usersDB;
@@ -71,21 +72,35 @@ public class Forum {
         return new ForumComment("a","b","c");
     }
 
-    public void removePost(String postUuid) {
+    public boolean removePost(String postUuid) {
         //removes post with uuid postUuid
+        return false;
     }
 
-    public void removePost(int postNumber) {
+    public boolean removePost(int postNumber) {
         //remove post number postNumber
+        return false;
     }
 
-    public void removeComment(String commentUuid) {
+    public boolean removeComment(String commentUuid) {
         //removes post with uuid postUuid
+        return false;
     }
 
-    public void removeComment(int commentNumber) {
+    public boolean removeComment(int commentNumber) {
         //remove post number postNumber
+        return false;
     }
 
+    public Stream getUsersStream() {
+        return usersDB.stream();
+    }
 
+    public Stream getPostsStream() {
+        return postsDB.stream();
+    }
+
+    public Stream<ForumComment> getCommentsStream() {
+        return commentsDB.stream();
+    }
 }

@@ -19,6 +19,26 @@ public class ForumComment {
         this.postUuid = postUuid;
     }
 
+    public String getAuthorUuid() {
+        return authorUuid;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public String getPostUuid() {
+        return postUuid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -1,28 +1,31 @@
 package com.kodilla.testing.ForumUser;
 
 import org.junit.*;
+import com.kodilla.utilities.ColorizeText;
 
 public class ForumTestSuite {
     private static int testCounter = 0;
+    private static ColorizeText ct = new ColorizeText(true);
 
     @BeforeClass
     public static void beforeAllTests() {
-        System.out.println("This is the beginning of tests.");
+        System.out.println(ct.cyan("This is the beginning of tests."));
     }
 
     @AfterClass
     public static void afterAllTests() {
-        System.out.println("All tests are finished.");
+        System.out.println(ct.cyan("All tests are finished."));
     }
 
     @Before
     public void beforeEveryTest() {
         testCounter++;
-        System.out.println("Preparing to execute test #" + testCounter);
+        System.out.println(ct.purple("Preparing to execute test #" + testCounter));
     }
 
     @Test
     public void testAddUser() {
+        System.out.println(ct.yellow("test: Add User"));
         //Given
         Forum photoForum = new Forum();
 
@@ -35,6 +38,7 @@ public class ForumTestSuite {
 
     @Test
     public void testAddPost() {
+        System.out.println(ct.yellow("test: Add Post"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -48,6 +52,7 @@ public class ForumTestSuite {
 
     @Test
     public void testAddComment() {
+        System.out.println(ct.yellow("test: Add Comment"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -62,6 +67,7 @@ public class ForumTestSuite {
 
     @Test
     public void testGetPost() {
+        System.out.println(ct.yellow("test: Get Post"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -77,6 +83,7 @@ public class ForumTestSuite {
 
     @Test
     public void testGetComment() {
+        System.out.println(ct.yellow("test: Get Comment"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -93,6 +100,7 @@ public class ForumTestSuite {
 
     @Test
     public void testRemovePostNotExist() {
+        System.out.println(ct.yellow("test: Remove Post that doesn't exists"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -107,6 +115,7 @@ public class ForumTestSuite {
 
     @Test
     public void testRemovePostAndItsComments() {
+        System.out.println(ct.yellow("test: Remove post with comments"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");
@@ -124,6 +133,7 @@ public class ForumTestSuite {
 
     @Test
     public void testRemoveCommentNotExist() {
+        System.out.println(ct.yellow("test: Remove comment that doesn't exists"));
         //Given
         Forum photoForum = new Forum();
         photoForum.addUser("Shinobi","Marcin Kawczyński");

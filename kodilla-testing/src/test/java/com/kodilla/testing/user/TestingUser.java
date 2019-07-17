@@ -1,5 +1,5 @@
 package com.kodilla.testing.user;
-import com.kodilla.testing.ColorizeText;
+import com.kodilla.utilities.ColorizeText;
 import org.junit.*;
 
 public class TestingUser {

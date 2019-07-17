@@ -1,4 +1,4 @@
-package com.kodilla.testing;
+package com.kodilla.utilities;
 
 public class ColorizeText {
     private static final String RESET = "\u001B[0m";

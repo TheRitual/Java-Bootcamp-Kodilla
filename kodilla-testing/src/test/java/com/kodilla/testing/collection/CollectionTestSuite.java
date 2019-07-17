@@ -7,10 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class CollectionTestSuite {
-    ColorizeText ct = new ColorizeText(true);
+    private ColorizeText ct = new ColorizeText(true);
     //empty list test
     @Before
     public void before() {
@@ -25,8 +26,8 @@ public class CollectionTestSuite {
     @Test
     public void testEmptyArray() {
         System.out.println(ct.purple("Testing Empty Array"));
-        ArrayList empty = new ArrayList();
-        ArrayList result = (ArrayList) OddNumbersExterminator.exterminate(empty);
+        List<Integer> empty = new ArrayList<>();
+        List<Integer> result = OddNumbersExterminator.exterminate(empty);
         Assert.assertTrue(result.isEmpty());
     }
 
@@ -34,11 +35,11 @@ public class CollectionTestSuite {
     public void testRandomNumbersArray() {
         System.out.println(ct.purple("Testing Random Numbers Array"));
         Random gen = new Random();
-        ArrayList<Integer> generated = new ArrayList();
+        List<Integer> generated = new ArrayList<>();
         for(int i = 0; i < 100 ; i++) {
             generated.add(gen.nextInt(999));
         }
-        ArrayList result = (ArrayList) OddNumbersExterminator.exterminate(generated);
+        List<Integer> result = OddNumbersExterminator.exterminate(generated);
         result.forEach(System.out::println);
     }
 

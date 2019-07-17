@@ -1,6 +1,6 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.ColorizeText;
+import com.kodilla.utilities.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

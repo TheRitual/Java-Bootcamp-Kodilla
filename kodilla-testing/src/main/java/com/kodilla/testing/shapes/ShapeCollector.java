@@ -10,6 +10,6 @@ public class ShapeCollector {
     }
 
     public Shape get(int index) {
-        return (Shape) new Circle();
+        return null;
     }
 }

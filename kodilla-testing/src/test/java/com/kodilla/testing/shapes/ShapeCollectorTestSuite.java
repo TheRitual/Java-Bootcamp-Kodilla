@@ -2,6 +2,9 @@ package com.kodilla.testing.shapes;
 
 import com.kodilla.utilities.*;
 import org.junit.*;
+import org.junit.runners.JUnit4;
+
+import static org.junit.Assert.assertEquals;
 
 public class ShapeCollectorTestSuite {
     private static ColorizeText ct = new ColorizeText(true);
@@ -83,5 +86,30 @@ public class ShapeCollectorTestSuite {
         System.out.println(ct.purple("Testing removing out of range"));
         ShapeCollector sc = new ShapeCollector();
         sc.remove(2);
+    }
+
+    @Test
+    public void testCalculateCircleField() {
+        System.out.println(ct.purple("Testing calculating field of Circle"));
+        ShapeCollector sc = new ShapeCollector();
+        sc.add(new Circle(10));
+        double result = Math.pow(10,2) * Math.PI;
+        assertEquals(result,sc.get(0).getField(),0);
+    }
+
+    @Test
+    public void testCalculateSquareField() {
+        System.out.println(ct.purple("Testing calculating field of square"));
+        ShapeCollector sc = new ShapeCollector();
+        sc.add(new Square(5));
+        assertEquals(25 ,sc.get(0).getField(),0);
+    }
+
+    @Test
+    public void testCalculateTrangleField() {
+        System.out.println(ct.purple("Testing calculating field of Triangle"));
+        ShapeCollector sc = new ShapeCollector();
+        sc.add(new Triangle(3,4,5));
+        assertEquals(6 ,sc.get(0).getField(),0);
     }
 }

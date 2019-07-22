@@ -2,7 +2,6 @@ package com.kodilla.testing.shapes;
 
 import com.kodilla.utilities.*;
 import org.junit.*;
-import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.assertEquals;
 
@@ -35,16 +34,37 @@ public class ShapeCollectorTestSuite {
         Shape result = new Circle(-20);
     }
 
+    @Test
+    public void testCircleName() {
+        System.out.println(ct.purple("Testing Circle getName"));
+        Shape result = new Circle(20);
+        assertEquals("Circle", result.getName());
+    }
+
     @Test (expected = IllegalArgumentException.class)
     public void testNegativeSquare() {
         System.out.println(ct.purple("Testing Negative Square"));
         Shape result = new Square(-20);
     }
 
+    @Test
+    public void testSquareName() {
+        System.out.println(ct.purple("Testing Square getName"));
+        Shape result = new Square(20);
+        assertEquals("Square", result.getName());
+    }
+
     @Test (expected = IllegalArgumentException.class)
     public void testNegativeTriangle() {
         System.out.println(ct.purple("Testing Negative Triangle"));
         Shape result = new Triangle(-20,-30, -1);
+    }
+
+    @Test
+    public void testTriangleName() {
+        System.out.println(ct.purple("Testing Triangle getName"));
+        Shape result = new Triangle(20,30,1);
+        assertEquals("Triangle", result.getName());
     }
 
     @Test (expected = IllegalArgumentException.class)

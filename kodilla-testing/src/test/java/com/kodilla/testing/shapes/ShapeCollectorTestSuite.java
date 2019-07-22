@@ -86,14 +86,14 @@ public class ShapeCollectorTestSuite {
         sc.add(null);
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test (expected = NullPointerException.class)
     public void testGetFromEmptyCollection() {
         System.out.println(ct.purple("Testing getting from empty collection"));
         ShapeCollector sc = new ShapeCollector();
         Shape result = sc.get(3);
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test (expected = NullPointerException.class)
     public void testGetOutOfRange() {
         System.out.println(ct.purple("Testing getting out of range"));
         ShapeCollector sc = new ShapeCollector();
@@ -101,7 +101,7 @@ public class ShapeCollectorTestSuite {
         Shape result = sc.get(3);
     }
 
-    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    @Test
     public void testRemoveOutOfRange() {
         System.out.println(ct.purple("Testing removing out of range"));
         ShapeCollector sc = new ShapeCollector();

@@ -1,8 +1,23 @@
 package com.kodilla.testing.shapes;
 
-public class ShapeCollector {
-    public void add(Shape shape) {
+import com.kodilla.utilities.ColorizeText;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShapeCollector {
+    private static ColorizeText ct;
+    private List<Shape> shapes;
+
+    ShapeCollector(){
+        shapes = new ArrayList<>();
+    }
+
+    public void add(Shape shape) {
+        if(shape == null) {
+            throw new NullPointerException();
+        }
+        shapes.add(shape);
     }
 
     public boolean remove(int index) {
@@ -10,6 +25,11 @@ public class ShapeCollector {
     }
 
     public Shape get(int index) {
-        return null;
+        try {
+            return shapes.get(index);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println(ct.red("ERROR:" + e));
+            return null;
+        }
     }
 }

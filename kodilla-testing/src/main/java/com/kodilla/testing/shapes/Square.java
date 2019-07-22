@@ -5,6 +5,9 @@ public class Square implements Shape {
     private double side;
 
     public Square(double a) {
+        if(a < 0) {
+            throw new IllegalArgumentException();
+        }
         side = a;
     }
 

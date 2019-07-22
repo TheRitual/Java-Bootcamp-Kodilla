@@ -8,6 +8,10 @@ public class Triangle implements Shape{
         this.a = a;
         this.b = b;
         this.c = c;
+        if(a + b <= c || a + c <= b || b + c <= a) {
+            System.out.println("It is impossible to have such a triangle dude!");
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override

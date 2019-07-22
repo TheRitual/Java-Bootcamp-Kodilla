@@ -5,6 +5,9 @@ public class Circle implements Shape{
     private double radius;
 
     public Circle(double r) {
+        if( r < 0) {
+            throw new IllegalArgumentException();
+        }
         radius = r;
     }
 

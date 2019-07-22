@@ -63,7 +63,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testTriangleName() {
         System.out.println(ct.purple("Testing Triangle getName"));
-        Shape result = new Triangle(20,30,1);
+        Shape result = new Triangle(2,3,4);
         assertEquals("Triangle", result.getName());
     }
 

@@ -21,7 +21,13 @@ public class ShapeCollector {
     }
 
     public boolean remove(int index) {
-        return false;
+        try {
+            shapes.remove(index);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Wrong index! \n" + e);
+            return false;
+        }
     }
 
     public Shape get(int index) {

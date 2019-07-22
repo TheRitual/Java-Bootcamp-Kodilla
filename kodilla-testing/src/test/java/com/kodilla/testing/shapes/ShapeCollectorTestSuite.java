@@ -66,7 +66,7 @@ public class ShapeCollectorTestSuite {
         sc.add(null);
     }
 
-    @Test (expected = NullPointerException.class)
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
     public void testGetFromEmptyCollection() {
         System.out.println(ct.purple("Testing getting from empty collection"));
         ShapeCollector sc = new ShapeCollector();

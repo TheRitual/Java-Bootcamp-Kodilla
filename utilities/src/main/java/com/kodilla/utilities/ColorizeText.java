@@ -11,6 +11,7 @@ public class ColorizeText {
     private static final String CYAN = "\u001B[36m";
     private static final String WHITE = "\u001B[37m";
     private boolean isColorized;
+    public static ColorizeText to = new ColorizeText(true);
 
     public void setColorized(boolean colorized) {
         isColorized = colorized;

@@ -12,12 +12,12 @@ public class StatisticOperator {
         this.amountOfUsers = statistics.usersNames().size();
         this.amountOfPosts = statistics.postsCount();
         this. amountOfComments = statistics.commentsCount();
-        if (amountOfUsers != 0) {
-            this.averagePostsPerUser = amountOfPosts / amountOfUsers;
-            this.averageCommentsPerUser = amountOfComments / amountOfUsers;
+        if (statistics.usersNames().size() != 0) {
+            this.averagePostsPerUser = (double) statistics.postsCount() / (double) statistics.usersNames().size();
+            this.averageCommentsPerUser = (double) statistics.commentsCount() / (double) statistics.usersNames().size();
         }
         if (amountOfPosts != 0) {
-            this.averageCommentsPerPost = amountOfComments / amountOfPosts;
+            this.averageCommentsPerPost = (double) statistics.commentsCount() / (double) statistics.postsCount();
         }
     }
 
@@ -28,10 +28,10 @@ public class StatisticOperator {
     @Override
     public String toString() {
         return "STATISTICS: Users: " + amountOfUsers +
-                "Posts: " + amountOfPosts +
-                "Comments: " + amountOfComments +
-                "Average Posts per User: " + averagePostsPerUser +
-                "Average Comments per User: " + averageCommentsPerUser +
-                "Average Comments per Post: " + averageCommentsPerPost;
+                " | Posts: " + amountOfPosts +
+                " | Comments: " + amountOfComments +
+                " | Average Posts per User: " + averagePostsPerUser +
+                " | Average Comments per User: " + averageCommentsPerUser +
+                " | Average Comments per Post: " + averageCommentsPerPost;
     }
 }

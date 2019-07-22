@@ -140,7 +140,7 @@ public class ForumStatisticsTestSuite {
             users.add("User " + i);
         }
         when(statsMock.usersNames()).thenReturn(users);
-        when(statsMock.postsCount()).thenReturn(0);
+        when(statsMock.postsCount()).thenReturn(50);
         when(statsMock.commentsCount()).thenReturn(20);
         operator.calculateAdvStatistics(statsMock);
         operator.showStatistics();

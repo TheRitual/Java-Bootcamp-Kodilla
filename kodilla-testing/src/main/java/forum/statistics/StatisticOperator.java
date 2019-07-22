@@ -12,9 +12,13 @@ public class StatisticOperator {
         this.amountOfUsers = statistics.usersNames().size();
         this.amountOfPosts = statistics.postsCount();
         this. amountOfComments = statistics.commentsCount();
-        this.averagePostsPerUser = amountOfPosts / amountOfUsers;
-        this.averageCommentsPerUser = amountOfComments / amountOfUsers;
-        this.averageCommentsPerPost = amountOfComments / amountOfPosts;
+        if (amountOfUsers != 0) {
+            this.averagePostsPerUser = amountOfPosts / amountOfUsers;
+            this.averageCommentsPerUser = amountOfComments / amountOfUsers;
+        }
+        if (amountOfPosts != 0) {
+            this.averageCommentsPerPost = amountOfComments / amountOfPosts;
+        }
     }
 
     public void showStatistics() {

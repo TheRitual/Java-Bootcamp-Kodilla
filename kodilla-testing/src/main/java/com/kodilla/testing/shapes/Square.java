@@ -2,9 +2,10 @@ package com.kodilla.testing.shapes;
 
 public class Square implements Shape {
     private String name = "Square";
+    private double side;
 
     public Square(double a) {
-
+        side = a;
     }
 
     @Override
@@ -14,6 +15,6 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        return 0;
+        return Math.pow(side,2);
     }
 }

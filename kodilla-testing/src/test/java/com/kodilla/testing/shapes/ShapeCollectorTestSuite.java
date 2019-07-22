@@ -74,8 +74,8 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testNullTriangle() {
-        System.out.println(ct.purple("Testing Null Circle"));
+    public void testZeroTriangle() {
+        System.out.println(ct.purple("Testing Zero Circle"));
         Shape result = new Triangle(-20,-30, 0);
     }
 

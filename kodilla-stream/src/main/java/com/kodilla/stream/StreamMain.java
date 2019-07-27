@@ -1,10 +1,8 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
-
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -25,7 +23,7 @@ public class StreamMain {
         System.out.println();
 
         ExpressionExecutor ee = new ExpressionExecutor();
-        ee.execute(12, 13, (a, b) -> a + b);
+        ee.execute(12, 13, (a, b) -> (a + b));
         ee.execute(12, 13, (a, b) -> a - b);
         ee.execute(12, 13, (a, b) -> a * b);
         ee.execute(12, 13, (a, b) -> a / b);
@@ -72,6 +70,9 @@ public class StreamMain {
                         .replace("X","𝓧")
                         .replace("Y","𝓨")
                         .replace("Z","𝓩")));
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
     }
 }

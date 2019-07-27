@@ -2,10 +2,10 @@ package com.kodilla.testing.library;
 
 import java.util.Objects;
 
-public class Book {
-    private String title;
-    private String author;
-    private int publicationYear;
+public final class Book {
+    private final String title;
+    private final String author;
+    private final int publicationYear;
 
     public Book(String title, String author, int publicationYear) {
         this.title = title;

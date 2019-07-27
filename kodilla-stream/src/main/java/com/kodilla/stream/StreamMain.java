@@ -1,6 +1,10 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.*;
+
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -21,16 +25,53 @@ public class StreamMain {
         System.out.println();
 
         ExpressionExecutor ee = new ExpressionExecutor();
-        ee.execute(12, 13, (a,b) -> a + b );
-        ee.execute(12, 13, (a,b) -> a - b );
-        ee.execute(12, 13, (a,b) -> a * b );
-        ee.execute(12, 13, (a,b) -> a / b );
+        ee.execute(12, 13, (a, b) -> a + b);
+        ee.execute(12, 13, (a, b) -> a - b);
+        ee.execute(12, 13, (a, b) -> a * b);
+        ee.execute(12, 13, (a, b) -> a / b);
 
         System.out.println();
 
-        ee.execute(12,13,FunctionalCalculator::add);
-        ee.execute(12,13,FunctionalCalculator::substract);
-        ee.execute(12,13,FunctionalCalculator::multiply);
-        ee.execute(12,13,FunctionalCalculator::divide);
+        ee.execute(12, 13, FunctionalCalculator::add);
+        ee.execute(12, 13, FunctionalCalculator::substract);
+        ee.execute(12, 13, FunctionalCalculator::multiply);
+        ee.execute(12, 13, FunctionalCalculator::divide);
+
+        System.out.println();
+
+        System.out.println(PoemBeautifier.beautify("A warning to the people, the good and the evil", String::toUpperCase));
+        System.out.println(PoemBeautifier.beautify("This is WAR", String::toLowerCase));
+        System.out.println(PoemBeautifier.beautify("To the soldier, the civilian, the martyr, the victim", txt -> txt.replace(' ', '_')));
+        System.out.println(PoemBeautifier.beautify("This is war", txt -> txt.toUpperCase().replace(' ', '_')));
+        System.out.println(PoemBeautifier.beautify("It's the moment of truth and the moment to lie", txt -> txt.toLowerCase().replace(' ', '_')));
+        System.out.println(PoemBeautifier.beautify("And the moment to live and the moment to die",
+                txt -> txt.toUpperCase()
+                        .replace("A","𝓐")
+                        .replace("B","𝓑")
+                        .replace("C","𝓒")
+                        .replace("D","𝓓")
+                        .replace("E","𝓔")
+                        .replace("F","𝓕")
+                        .replace("G","𝓖")
+                        .replace("H","𝓗")
+                        .replace("I","𝓘")
+                        .replace("J","𝓙")
+                        .replace("K","𝓚")
+                        .replace("L","𝓛")
+                        .replace("M","𝓜")
+                        .replace("N","𝓝")
+                        .replace("O","𝓞")
+                        .replace("P","𝓟")
+                        .replace("Q","𝓠")
+                        .replace("R","𝓡")
+                        .replace("S","𝓢")
+                        .replace("T","𝓣")
+                        .replace("U","𝓤")
+                        .replace("V","𝓥")
+                        .replace("W","𝓦")
+                        .replace("X","𝓧")
+                        .replace("Y","𝓨")
+                        .replace("Z","𝓩")));
+
     }
 }

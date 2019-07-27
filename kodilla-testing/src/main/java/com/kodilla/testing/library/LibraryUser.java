@@ -2,7 +2,7 @@ package com.kodilla.testing.library;
 
 import java.util.Objects;
 
-public class LibraryUser {
+public final class LibraryUser {
     private final String firstname;
     private final String lastname;
     private final String peselId;

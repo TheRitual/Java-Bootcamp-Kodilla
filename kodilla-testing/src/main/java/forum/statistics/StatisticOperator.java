@@ -22,6 +22,10 @@ public class StatisticOperator {
         System.out.println(toString());
     }
 
+    public ImmutableStatistics getStatistics() {
+        return statistics;
+    }
+
     @Override
     public String toString() {
         return "STATISTICS: Users: " + statistics.getAmountOfUsers() +

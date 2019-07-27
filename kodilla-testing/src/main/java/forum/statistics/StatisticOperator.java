@@ -1,24 +1,21 @@
 package forum.statistics;
 
 public class StatisticOperator {
-    private int amountOfUsers = 0;
-    private int amountOfPosts = 0;
-    private int amountOfComments = 0;
-    private double averagePostsPerUser = 0;
-    private double averageCommentsPerUser = 0;
-    private double averageCommentsPerPost = 0;
+    private ImmutableStatistics statistics;
 
     public void calculateAdvStatistics(Statistics statistics) {
-        this.amountOfUsers = statistics.usersNames().size();
-        this.amountOfPosts = statistics.postsCount();
-        this. amountOfComments = statistics.commentsCount();
+        double averagePostsPerUser = 0;
+        double averageCommentsPerUser = 0;
+        double averageCommentsPerPost = 0;
         if (statistics.usersNames().size() != 0) {
-            this.averagePostsPerUser = (double) statistics.postsCount() / (double) statistics.usersNames().size();
-            this.averageCommentsPerUser = (double) statistics.commentsCount() / (double) statistics.usersNames().size();
+            averagePostsPerUser = (double) statistics.postsCount() / (double) statistics.usersNames().size();
+            averageCommentsPerUser = (double) statistics.commentsCount() / (double) statistics.usersNames().size();
         }
-        if (amountOfPosts != 0) {
-            this.averageCommentsPerPost = (double) statistics.commentsCount() / (double) statistics.postsCount();
+        if (statistics.postsCount() != 0) {
+            averageCommentsPerPost = (double) statistics.commentsCount() / (double) statistics.postsCount();
         }
+
+        this.statistics = new ImmutableStatistics(statistics.usersNames().size(),statistics.postsCount(),statistics.commentsCount(),averagePostsPerUser,averageCommentsPerUser,averageCommentsPerPost);
     }
 
     public void showStatistics() {
@@ -27,11 +24,11 @@ public class StatisticOperator {
 
     @Override
     public String toString() {
-        return "STATISTICS: Users: " + amountOfUsers +
-                " | Posts: " + amountOfPosts +
-                " | Comments: " + amountOfComments +
-                " | Average Posts per User: " + averagePostsPerUser +
-                " | Average Comments per User: " + averageCommentsPerUser +
-                " | Average Comments per Post: " + averageCommentsPerPost;
+        return "STATISTICS: Users: " + statistics.getAmountOfUsers() +
+                " | Posts: " + statistics.getAmountOfPosts() +
+                " | Comments: " + statistics.getAmountOfComments() +
+                " | Average Posts per User: " + statistics.getAveragePostsPerUser() +
+                " | Average Comments per User: " + statistics.getAverageCommentsPerUser() +
+                " | Average Comments per Post: " + statistics.getAverageCommentsPerPost();
     }
 }

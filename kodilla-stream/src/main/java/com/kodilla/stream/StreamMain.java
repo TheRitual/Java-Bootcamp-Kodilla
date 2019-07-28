@@ -6,13 +6,25 @@ package com.kodilla.stream;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;*/
 
-import com.kodilla.stream.person.People;
+//import com.kodilla.stream.person.People;
+
+import com.kodilla.stream.book.BookDirectory;
 
 public class StreamMain {
     public static void main(String[] args) {
         System.out.println("Welcome to module 7 - STREAMS!");
 
-        People.getList().stream().forEach(System.out::println);
+        BookDirectory bd = new BookDirectory();
+        bd.getList().stream()
+                .filter(book -> book.getPublicationYear() > 2005)
+                .forEach(System.out::println);
+
+  /*      People.getList().stream()
+                .filter(s -> s.length() > 11)
+                .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".")
+                .filter(s -> s.substring(0, 1)
+                .equals("M"))
+                .forEach(System.out::println);*/
 
 
         /*SaySomething ss = new SaySomething();

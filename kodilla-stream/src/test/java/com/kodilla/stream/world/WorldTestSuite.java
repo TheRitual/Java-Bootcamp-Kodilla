@@ -81,10 +81,7 @@ public class WorldTestSuite {
 
 
         //When
-        BigDecimal totalPpl = earth.getListOfContinents().stream()
-                .flatMap(continent -> continent.getListOfCountries().stream())
-                .map(Country::getPeopleQuantity)
-                .reduce(BigDecimal.ZERO, (sum, cur) -> sum = sum.add(cur));
+        BigDecimal totalPpl =earth.getPeopleQuantity();
         System.out.println(totalPpl);
         BigDecimal expectedPpl = new BigDecimal("7530000000");
 

@@ -1,24 +1,31 @@
 package com.kodilla.stream;
 
-
-
-/*import com.kodilla.stream.beautifier.PoemBeautifier;
+/*
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.*;*/
-
-//import com.kodilla.stream.person.People;
+import com.kodilla.stream.lambda.*;
+import java.util.List;
+import java.util.Map;
+import com.kodilla.stream.person.People;
+ */
 
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
-
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
         System.out.println("Welcome to module 7 - STREAMS!");
 
-        BookDirectory bd = new BookDirectory();
+        BookDirectory theBookDirectory = new BookDirectory();
+        String theResultStringOfBooks = theBookDirectory.getList().stream()
+                .filter(book -> book.getPublicationYear() > 2005)
+                .map(Book::toString)
+                .collect(Collectors.joining(",\n","<<",">>"));
+
+        System.out.println(theResultStringOfBooks);
+
+/*        BookDirectory bd = new BookDirectory();
         bd.getList().stream()
                 .filter(book -> book.getPublicationYear() > 2005)
                 .forEach(System.out::println);
@@ -30,6 +37,15 @@ public class StreamMain {
                 .collect(Collectors.toList());
 
         resultList.stream().forEach(System.out::println);
+
+        Map<String, Book> theResultMapOfBooks = bd.getList().stream()
+                .filter(book -> book.getPublicationYear() > 2005)
+                .collect(Collectors.toMap(Book::getSignature, book -> book));
+
+        System.out.println("# elements: " + theResultMapOfBooks.size());
+        theResultMapOfBooks.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);*/
 
   /*      People.getList().stream()
                 .filter(s -> s.length() > 11)

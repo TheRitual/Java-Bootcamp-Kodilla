@@ -13,6 +13,7 @@ import com.kodilla.stream.book.BookDirectory;
 
 
 import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumSex;
 import com.kodilla.stream.forumuser.ForumUser;
 
 import java.time.LocalDate;
@@ -30,7 +31,7 @@ public class StreamMain {
         forum.getUsers().stream().forEach(System.out::println);
 
         Map<Integer, ForumUser> userMap = forum.getUsers().stream()
-                .filter( forumUser -> forumUser.getSex() == 'M')
+                .filter( forumUser -> forumUser.getSex() == ForumSex.MALE)
                 .filter( forumUser -> LocalDate.now()
                             .minus(forumUser.getDateOfBirth().getYear(), ChronoUnit.YEARS)
                             .minus(forumUser.getDateOfBirth().getMonthValue(), ChronoUnit.MONTHS).plus(1,ChronoUnit.MONTHS)

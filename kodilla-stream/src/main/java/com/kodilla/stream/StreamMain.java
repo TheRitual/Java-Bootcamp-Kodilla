@@ -8,7 +8,11 @@ import com.kodilla.stream.lambda.*;*/
 
 //import com.kodilla.stream.person.People;
 
+import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -18,6 +22,14 @@ public class StreamMain {
         bd.getList().stream()
                 .filter(book -> book.getPublicationYear() > 2005)
                 .forEach(System.out::println);
+
+        System.out.println();
+
+        List<Book> resultList = bd.getList().stream()
+                .filter(book -> book.getPublicationYear() > 2005)
+                .collect(Collectors.toList());
+
+        resultList.stream().forEach(System.out::println);
 
   /*      People.getList().stream()
                 .filter(s -> s.length() > 11)

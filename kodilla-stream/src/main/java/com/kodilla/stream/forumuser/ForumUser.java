@@ -2,7 +2,7 @@ package com.kodilla.stream.forumuser;
 
 import java.time.LocalDate;
 
-final class ForumUser {
+public final class ForumUser {
     private final int uuid;
     private final String username;
     private final char sex;
@@ -11,7 +11,7 @@ final class ForumUser {
 
     ForumUser(final String username, final char sex, final LocalDate dateOfBirth, final int amountOfPosts){
         LocalDate time = LocalDate.now();
-        this.uuid = (int) System.currentTimeMillis();
+        this.uuid = (int) System.currentTimeMillis() + this.hashCode();
         this.username = username;
         this.dateOfBirth = dateOfBirth;
         this.amountOfPosts = amountOfPosts;
@@ -23,6 +23,36 @@ final class ForumUser {
         } else {
             throw new IllegalArgumentException("Sex must be a char with value M or F");
         }
+    }
 
+    public int getUuid() {
+        return uuid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public int getAmountOfPosts() {
+        return amountOfPosts;
+    }
+
+    @Override
+    public String toString() {
+        return "ForumUser{" +
+                "uuid = " + uuid +
+                ", username = '" + username + '\'' +
+                ", sex = " + sex +
+                ", dateOfBirth = " + dateOfBirth +
+                ", amountOfPosts = " + amountOfPosts +
+                '}';
     }
 }

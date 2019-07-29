@@ -7,12 +7,17 @@ import com.kodilla.stream.lambda.*;
 import java.util.List;
 import java.util.Map;
 import com.kodilla.stream.person.People;
- */
-
 import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
-import com.kodilla.stream.forumuser.Forum;
+ */
 
+
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StreamMain {
@@ -21,7 +26,21 @@ public class StreamMain {
 
         Forum forum = new Forum();
 
+        System.out.println("\n ALL:");
+        forum.getUsers().stream().forEach(System.out::println);
 
+        Map<Integer, ForumUser> userMap = forum.getUsers().stream()
+                .filter( forumUser -> forumUser.getSex() == 'M')
+                .filter( forumUser -> LocalDate.now()
+                            .minus(forumUser.getDateOfBirth().getYear(), ChronoUnit.YEARS)
+                            .minus(forumUser.getDateOfBirth().getMonthValue(), ChronoUnit.MONTHS).plus(1,ChronoUnit.MONTHS)
+                            .minus(forumUser.getDateOfBirth().getDayOfMonth(), ChronoUnit.DAYS).plus(1, ChronoUnit.DAYS)
+                            .getYear() >= 20 )
+                .filter( forumUser -> forumUser.getAmountOfPosts() >=1 )
+                .collect(Collectors.toMap(ForumUser::getUuid, ForumUser -> ForumUser));
+
+        System.out.println("\n Filtered:");
+        userMap.entrySet().stream().forEach(System.out::println);
 
         /*BookDirectory theBookDirectory = new BookDirectory();
         String theResultStringOfBooks = theBookDirectory.getList().stream()

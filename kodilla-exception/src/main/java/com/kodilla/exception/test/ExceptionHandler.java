@@ -8,6 +8,8 @@ public class ExceptionHandler {
             sc.probablyIWillThrowException(10,29);
         } catch(Exception e) {
             System.out.println("Wrong stuff is happening! " + e);
+        } finally {
+            System.out.println("Rest of stuff is done at all...");
         }
     }
 }

@@ -15,7 +15,7 @@ public final class Forum {
         users.add(new ForumUser("DuckRiddle", ForumSex.MALE, LocalDate.of(1999, Month.SEPTEMBER, 19), 453));
         users.add(new ForumUser("Szaki", ForumSex.FAMALE, LocalDate.of(2001, Month.JULY, 12), 24));
         users.add(new ForumUser("AcidCat", ForumSex.FAMALE, LocalDate.of(1997, Month.FEBRUARY, 22), 57));
-        users.add(new ForumUser("Janusz", ForumSex.MALE, LocalDate.of(1999, Month.JULY, 29), 57));
+        users.add(new ForumUser("Janusz", ForumSex.MALE, LocalDate.of(1999, Month.JULY, 30), 57));
         users.add(new ForumUser("SilentBob", ForumSex.MALE, LocalDate.of(1994, Month.DECEMBER, 24), 0));
         users.add(new ForumUser("YoungGuy", ForumSex.MALE, LocalDate.of(2004, Month.JANUARY, 11), 20));
 

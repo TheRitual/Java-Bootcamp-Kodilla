@@ -17,4 +17,5 @@ include 'kodilla-testing'
 include ':utilities'
 include 'kodilla-stream'
 include 'kodilla-exception'
+include 'kodilla-good-patterns'
 

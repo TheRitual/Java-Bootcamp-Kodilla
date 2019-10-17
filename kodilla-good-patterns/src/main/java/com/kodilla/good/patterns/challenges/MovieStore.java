@@ -5,8 +5,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MovieStore {
-    public Map<String, List<String>> getMovies() {
+class MovieStore {
+
+    void titleIteration() {
+        MovieStore movieStore = new MovieStore();
+        Map<String, List<String>> ms = movieStore.getMovies();
+        ms.entrySet().stream()
+                .flatMap(e -> e.getValue().stream())
+                .forEach(l -> System.out.print(l + "!"));
+        System.out.println("\n DONE! \n");
+    }
+
+    private Map<String, List<String>> getMovies() {
 
         List<String> ironManTranslations = new ArrayList<>();
         ironManTranslations.add("Żelazny Człowiek");

@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 class MovieStore {
 
-    void titleIteration() {
+    String titleIteration() {
         MovieStore movieStore = new MovieStore();
         Map<String, List<String>> ms = movieStore.getMovies();
-        ms.entrySet().stream()
+        return ms.entrySet().stream()
                 .flatMap(e -> e.getValue().stream())
-                .forEach(l -> System.out.print(l + "!"));
-        System.out.println("\n DONE! \n");
+                .map(e -> e.toString()).collect(Collectors.joining("!"));
     }
 
     private Map<String, List<String>> getMovies() {

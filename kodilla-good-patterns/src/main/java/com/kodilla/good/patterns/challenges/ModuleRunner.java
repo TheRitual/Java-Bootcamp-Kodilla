@@ -8,7 +8,9 @@ import java.util.Set;
 public class ModuleRunner {
     public static void main(String[] args) {
 
-        AnnouncementService announcementService = new EmailService();
+
+
+        /* AnnouncementService announcementService = new EmailService();
         DatabaseOperator database = new FakeDatabase();
         ProductOrderService pos = new ProductOrderService(announcementService, database);
 
@@ -19,8 +21,7 @@ public class ModuleRunner {
 
         OrderDto order = new OrderDto(shoppingList, database.getUser(0));
 
-        pos.process(order);
-
+        pos.process(order);*/
 
         /*MovieStore movieStore = new MovieStore();
         System.out.println(movieStore.titleIteration()); */

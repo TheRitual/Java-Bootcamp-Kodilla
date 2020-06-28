@@ -28,7 +28,7 @@ public class StreamMain {
         Forum forum = new Forum();
 
         System.out.println("\n ALL:");
-        forum.getUsers().stream().forEach(System.out::println);
+        forum.getUsers().forEach(System.out::println);
 
         Map<Integer, ForumUser> userMap = forum.getUsers().stream()
                 .filter( forumUser -> forumUser.getSex() == ForumSex.MALE)
@@ -37,7 +37,7 @@ public class StreamMain {
                 .collect(Collectors.toMap(ForumUser::getUuid, ForumUser -> ForumUser));
 
         System.out.println("\n Filtered:");
-        userMap.entrySet().stream().forEach(System.out::println);
+        userMap.entrySet().forEach(System.out::println);
 
         /*BookDirectory theBookDirectory = new BookDirectory();
         String theResultStringOfBooks = theBookDirectory.getList().stream()
@@ -112,33 +112,7 @@ public class StreamMain {
         System.out.println(PoemBeautifier.beautify("This is war", txt -> txt.toUpperCase().replace(' ', '_')));
         System.out.println(PoemBeautifier.beautify("It's the moment of truth and the moment to lie", txt -> txt.toLowerCase().replace(' ', '_')));
         System.out.println(PoemBeautifier.beautify("And the moment to live and the moment to die",
-                txt -> txt.toUpperCase()
-                        .replace("A","𝓐")
-                        .replace("B","𝓑")
-                        .replace("C","𝓒")
-                        .replace("D","𝓓")
-                        .replace("E","𝓔")
-                        .replace("F","𝓕")
-                        .replace("G","𝓖")
-                        .replace("H","𝓗")
-                        .replace("I","𝓘")
-                        .replace("J","𝓙")
-                        .replace("K","𝓚")
-                        .replace("L","𝓛")
-                        .replace("M","𝓜")
-                        .replace("N","𝓝")
-                        .replace("O","𝓞")
-                        .replace("P","𝓟")
-                        .replace("Q","𝓠")
-                        .replace("R","𝓡")
-                        .replace("S","𝓢")
-                        .replace("T","𝓣")
-                        .replace("U","𝓤")
-                        .replace("V","𝓥")
-                        .replace("W","𝓦")
-                        .replace("X","𝓧")
-                        .replace("Y","𝓨")
-                        .replace("Z","𝓩")));
+                txt -> txt.toUpperCase();
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);*/

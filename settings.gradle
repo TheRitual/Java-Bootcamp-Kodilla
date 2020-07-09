@@ -19,4 +19,8 @@ include 'kodilla-stream'
 include 'kodilla-exception'
 include 'kodilla-good-patterns'
 include 'kodilla-springtest'
+include 'kodilla-spring'
+include 'kodilla-spring:kodilla-spring'
+findProject(':kodilla-spring:kodilla-spring')?.name = 'kodilla-spring'
+include 'kodilla-spring'
 

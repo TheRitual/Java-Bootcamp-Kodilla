@@ -23,4 +23,5 @@ include 'kodilla-spring'
 include 'kodilla-spring:kodilla-spring'
 findProject(':kodilla-spring:kodilla-spring')?.name = 'kodilla-spring'
 include 'kodilla-spring'
+include 'kodilla-spring'
 
